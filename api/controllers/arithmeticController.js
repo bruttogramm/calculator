@@ -6,12 +6,12 @@ exports.calculate = function(req, res) {
       return next(err);
     }
 
-    res.status(400);
+    res.status(400); 
     res.json({ error: err.message });
   });
 
   var operations = {
-    'add':      function(a,b) { return a + b },
+    'add':      function(a,b) { return +a + +b  },
     //uhaha
     'subtract': function(a,b) { return a - b },
     'multiply': function(a,b) { return a * b },
